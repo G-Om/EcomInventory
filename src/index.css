@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Footer CSS */
+.footer{
+  border: 1px solid red;
+  text-align: center;
+  background-color:  #F3F1F6;
+}
+.subscribe h3{
+  font-size: 29px;
+  text-transform: capitalize;
+}
+.subscribeInput{
+  padding: 25px;
+}
+.subscribeInput input{
+  padding: 10px;
+  font-size: 18px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+.subscribeInput .inputText{
+  width: 30%;
+  
+}
+.subscribeInput .submit-btn{
+  width: 10%;
+  color: white;
+  background-color: black;
+}
+.subscribeInput .submit-btn:hover{
+  background-color: #8E43F0;
+  border: 1px solid #8E43F0;;
+}
+.nav-elements-list ul{
+  display: flex;
+  align-items: center;
+ justify-content: center;
+  list-style-type: none;
+  font-size: 20px;
+  
+}
+.nav-elements-list ul a{
+  margin: 0 20px  0 20px;
+  text-transform: capitalize;
+   text-decoration: none;
+   color: rgb(73, 70, 70);
+}
+.socail-media-handles img{
+  height: auto;
+  max-width: 30px;
+  margin: 20px 10px 0 10px;
+  transition: 0.2s;
+}
+.socail-media-handles img:hover{
+ transform: translateY(-5px);
+ transition: 0.2s;
+}
+.copyright-content{
+  background-color: black;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+ 
+}
+.copyright-content p{
+  font-size: 16px;
+}
