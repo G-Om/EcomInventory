@@ -1,10 +1,21 @@
+:root {
+  --ast-global-color-0: #000000;
+  --ast-global-color-1: #000000;
+  --ast-global-color-2: #000000;
+  --ast-global-color-3: rgba(0,0,0,0.6);
+  --ast-global-color-4: #faedeb;
+  --ast-global-color-5: #FFFFFF;
+  --ast-global-color-6: rgba(224,214,213,0.48);
+  --ast-global-color-7: #424242;
+  --ast-global-color-8: #000000;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -12,6 +23,56 @@ code {
     monospace;
 }
 
+
+/* The max height of card component at 1920 1080 is 632.65px 
+    height of image = 554.333 = 87.62%
+    img margin bottom = 10.4 = 1.64%
+    height of text box = 67.927 = 10.73%
+    padding left right of text box = 15.6 = 2.46%
+    padding card bottom = 15.6 = 2.46%
+    margin card bottom = 32.5 = 5.13%
+*/
+.card-div {
+  display: flex;
+  height: 632.65% ;
+  flex-direction: column;
+  padding-bottom: 2.46%;
+  margin-bottom: 5.13%;
+}
+.card-image-div{
+    margin-bottom: 1.64%;
+}
+.card-img {
+  width:  100%;
+  height: 87.62%;
+}
+.card-textbox {
+
+  font-family: inherit;
+  display: block;
+  height: 10.73%;
+  padding-left: 2.46%;
+  padding-right: 2.46%;
+  text-align: left;
+}
+.product-title {
+  color : var(--ast-global-color-2);
+}
+
+.card-textbox a{
+  text-decoration: none;
+}
+.price {
+  color : var(--ast-global-color-3);
+  font-weight:700;
+}
+
+.product-category {
+  text-transform: uppercase;
+  color: var(--ast-global-color-3);
+  opacity: 0.6;
+
+}
 /* Footer CSS */
 .footer{
   border: 1px solid red;
