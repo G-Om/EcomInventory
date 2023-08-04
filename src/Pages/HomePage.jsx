@@ -1,6 +1,6 @@
 import { CardComponent } from "../Components/CardComponent"
 
-
+/*I added this comment through git hub directly.*/
 export const HomePage = ()=>{
     return(
         <div>
