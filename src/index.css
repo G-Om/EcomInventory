@@ -141,3 +141,69 @@ code {
   font-size: 16px;
   
 }
+
+/* Carousel */
+ .carousel{
+ height: 80%;
+  margin: auto;
+  width: 95%;
+  display: flex;
+  justify-content: right;
+  background-color: #FAEDEB;
+  margin-bottom: 50px;
+ }
+ .carousel-text{
+  margin: auto;
+  width: 500px;
+ }
+ .carousel-text h6{
+  font-size: 13px;
+  color: var(--ast-global-color-3);
+  text-transform: uppercase;
+  margin-bottom: 0;
+ }
+ .carousel-text h1{
+  font-size: 55px;
+  margin-top: 2px;
+ }
+ .carousel-button{
+  
+  background-color: #000000;
+  padding: 15px;
+  display: inline-block;
+ }
+ .carousel-text a{
+  font-size: 15px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  letter-spacing: 1px;
+ }
+ .carousel-text a:hover{
+  color:var(--ast-global-color-6) ;
+  transition: 0.2s;
+ }
+ .carousel-image{
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow:hidden;
+  margin-right: 55px;
+ }
+ .carousel-image .front{
+  position: relative;
+  top: 50;
+  left: 20;
+  height: 80%;
+  margin-top: 70px;
+  
+ }
+ .carousel-image .back{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  margin-top:-60px;
+  
+ }
+ 
