@@ -1,6 +1,5 @@
- import facebook from '../images/fb-icon.png';
- import instagram from '../images/instagram-icon.png';
- import twitter from '../images/twitter-icon.png';
+
+
 export const FooterComponent = () => {
   return (
     <div>
@@ -29,13 +28,13 @@ export const FooterComponent = () => {
             </div>
             <div className="socail-media-handles">
               <a href="#" target="_blank">
-                <img src={facebook}></img>
+                <img src={'./images/fb-icon.png'}></img>
               </a>
               <a href="#" target="_blank">
-                <img src={instagram}></img>
+                <img src={'./images/instagram-icon.png'}></img>
               </a>
               <a href="#" target="_blank">
-                <img src={twitter}></img>
+                <img src={'./images/twitter-icon.png'}></img>
               </a>
             </div>
             <div className="copyright-content">

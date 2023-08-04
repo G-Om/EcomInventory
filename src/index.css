@@ -34,45 +34,44 @@ code {
 */
 .card-div {
   display: flex;
-  height: 632.65% ;
   flex-direction: column;
-  padding-bottom: 2.46%;
-  margin-bottom: 5.13%;
 }
 .card-image-div{
     margin-bottom: 1.64%;
 }
 .card-img {
   width:  100%;
-  height: 87.62%;
 }
 .card-textbox {
 
   font-family: inherit;
-  display: block;
-  height: 10.73%;
-  padding-left: 2.46%;
-  padding-right: 2.46%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.2em;
   text-align: left;
 }
 .product-title {
   color : var(--ast-global-color-2);
+  font-size: 1.3846153846154rem;
 }
 
 .card-textbox a{
   text-decoration: none;
+  display: inline-block;
 }
 .price {
   color : var(--ast-global-color-3);
   font-weight:700;
+  width: 100%;
 }
 
 .product-category {
   text-transform: uppercase;
   color: var(--ast-global-color-3);
   opacity: 0.6;
-
+  font-size: 0.85em;
 }
+
 /* Footer CSS */
 .footer{
   border: 1px solid red;
@@ -141,6 +140,89 @@ code {
   font-size: 16px;
   
 }
+
+/*HomePage -tray*/
+
+.card-tray {
+  padding: 100px 0 0;
+}
+
+.card-container {
+  max-width: 1140px;
+  
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.tray-heading-cont {
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.widget-container {
+  display: block;
+}
+.widget-container .text{
+  color: var(--ast-global-color-3);
+  line-height: 1.25em;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'Poppins',sans-serif;
+}
+
+.widget-container-bg {
+  padding: 0 0 30px;
+  display: block;
+}
+
+.widget-container-bg h2{
+  margin: 0;
+  columns: var(--ast-global-color-2);
+  font-size: 2.7692307692308rem;
+  font-weight: 600;
+  font-family: 'Poppins',sans-serif;
+  padding: 0;
+  line-height: 1em;
+  box-sizing: border-box;
+}
+
+.card-sec-row{
+  display: flex;
+}
+
+ul.products {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(4,1fr);
+  padding: 0;
+}
+
+.product-card {
+  padding-bottom: 1.2em;
+  margin-bottom: 2.5em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  list-style: none;
+}
+
+
+
+
+
+
+
+
 
 /* CSS for Navbar */
 
