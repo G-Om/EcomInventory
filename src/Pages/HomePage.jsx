@@ -1,7 +1,5 @@
 import { CardComponent } from "../Components/CardComponent";
-import tshirt from "../images/Tshirt.jpg";
-import carousel1 from "../images/carousel1.png";
-import carousel2 from "../images/carsousel1-bg.png";
+ 
 export const HomePage = () => {
   return (
     <div>
@@ -20,17 +18,12 @@ export const HomePage = () => {
         </div>
         
         <div class="carousel-image">
-          <img class="front" src={carousel2} alt="" />  
-          <img class="back" src={carousel1} alt="" />  
+          <img class="front" src={"./images/carsousel1-bg.png"} alt="" />  
+          <img class="back" src={"./images/carousel1.png"} alt="" />  
         </div>
       </section>
 
-      <CardComponent
-        price={"5"}
-        name={"T-Shirt 1"}
-        category={"Men"}
-        image={tshirt}
-      ></CardComponent>
+       
     </div>
   );
 };
