@@ -1,5 +1,3 @@
-import tshirt from '../images/Tshirt.jpg'
-
 
 export const CardComponent = ({image, category, name, price}) => {
     return (
