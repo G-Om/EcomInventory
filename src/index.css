@@ -141,3 +141,23 @@ code {
   font-size: 16px;
   
 }
+
+/* CSS for Navbar */
+
+form {
+  margin-right: 10px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+}
+
+#logo{
+  margin-left: 300px;
+}
+
+.nav-item {
+  margin-top: 5px;
+}
