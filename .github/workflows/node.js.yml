@@ -69,7 +69,11 @@ jobs:
        with:
           host: ${{ secrets.HOST }}
           username:  ${{ secrets.USER }}
-          key:  ${{ secrets.KEY }}
+          key:  b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+                QyNTUxOQAAACCsWhmQyX0V9aSC8RJjpgYPjc6ZSG22hSCdb0cmW88SNgAAAJgxgPAfMYDw
+                HwAAAAtzc2gtZWQyNTUxOQAAACCsWhmQyX0V9aSC8RJjpgYPjc6ZSG22hSCdb0cmW88SNg
+                AAAEChasm5yVwXdtV88jOyKRVyz42NQa30hb7wHnW/u2KD3axaGZDJfRX1pILxEmOmBg+N
+                zplIbbaFIJ1vRyZbzxI2AAAAE29tZ2F2YWRlNkBnbWFpbC5jb20BAg==
           port:  ${{ secrets.PORT }}
           script: |
 
