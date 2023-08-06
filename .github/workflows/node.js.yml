@@ -27,26 +27,27 @@ jobs:
         run: 
           npm --version
           echo npm --version
-
+          cd ~/EcomInventory/frontend/EcomInventory
+          git pull origin main
         env: 
           CI: true
 
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
+  # deploy:
+  #   needs: [build]
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: SSH deploy
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          echo: ${host}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
+  #   steps:
+  #     - name: SSH deploy
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.HOST }}
+  #         echo: ${host}
+  #         username: ${{ secrets.USER }}
+  #         key: ${{ secrets.KEY }}
+  #         port: ${{ secrets.PORT }}
 
-          script: |
-               cd ~/EcomInventory/frontend/EcomInventory
-               git pull origin main
+  #         script: |
+  #              cd ~/EcomInventory/frontend/EcomInventory
+  #              git pull origin main
 
 
