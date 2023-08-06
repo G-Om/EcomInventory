@@ -28,13 +28,13 @@ export const FooterComponent = () => {
             </div>
             <div className="socail-media-handles">
               <a href="#" target="_blank">
-                <img src={'./images/fb-icon.png'}></img>
+                <img src={'./images/fb-icon.png'} alt=""></img>
               </a>
               <a href="#" target="_blank">
-                <img src={'./images/instagram-icon.png'}></img>
+                <img src={'./images/instagram-icon.png'} alt=""></img>
               </a>
               <a href="#" target="_blank">
-                <img src={'./images/twitter-icon.png'}></img>
+                <img src={'./images/twitter-icon.png' } alt=""></img>
               </a>
             </div>
             <div className="copyright-content">

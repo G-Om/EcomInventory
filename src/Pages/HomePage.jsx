@@ -9,14 +9,14 @@ export const HomePage = ()=>{
                 <div className="card-container">
                         <div className="card-inner">
 
-                            <div class="tray-heading-cont" >
-                                <div class="widget-container">
-                                    <h6 class="text">Summer Collection</h6>
+                            <div className="tray-heading-cont" >
+                                <div className="widget-container">
+                                    <h6 className="text">Summer Collection</h6>
                                 </div>
                             </div>
 
-                            <div class="tray-heading-cont">
-                                <div class="widget-container-bg">
+                            <div className="tray-heading-cont">
+                                <div className="widget-container-bg">
                                 <h2 >Popular T-Shirts</h2> </div>
                             </div>
                             {/* Card Tray */}
