@@ -69,7 +69,7 @@ jobs:
        with:
           host: ${{ secrets.HOST }}
           username:  ${{ secrets.USER }}
-          ssh-private-key:  ${{ secrets.KEY }}
+          key:  ${{ secrets.KEY }}
           port:  ${{ secrets.PORT }}
           script: |
 
