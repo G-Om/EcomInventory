@@ -4,7 +4,6 @@ import { CardComponent } from "../Components/CardComponent"
 export const HomePage = ()=>{
     return(
         <div>
-            <b>Home component</b>
             <section className="card-tray">
                 <div className="card-container">
                         <div className="card-inner">
