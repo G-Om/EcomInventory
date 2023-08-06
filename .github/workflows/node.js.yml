@@ -27,27 +27,35 @@ jobs:
         run: 
           npm --version
           echo npm --version
-          cd ~/EcomInventory/frontend/EcomInventory
-          git pull origin main
         env: 
           CI: true
 
-  # deploy:
-  #   needs: [build]
-  #   runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: SSH deploy
-  #       uses: appleboy/ssh-action@master
-  #       with:
-  #         host: ${{ secrets.HOST }}
-  #         echo: ${host}
-  #         username: ${{ secrets.USER }}
-  #         key: ${{ secrets.KEY }}
-  #         port: ${{ secrets.PORT }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-  #         script: |
-  #              cd ~/EcomInventory/frontend/EcomInventory
-  #              git pull origin main
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.KEY }}
+
+      - name: SSH into Remote Server and Execute Script
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USER}}
+          key: ${{ secrets.KEY }}
+          port: 22
+          script: |
+
+            cd ~/EcomInventory/frontend/EcomInventory  
+            # Execute the remote script
+            git pull origin main
+
+          # Optional: Capture output to a log file
+          out: deployment.log
 
 
