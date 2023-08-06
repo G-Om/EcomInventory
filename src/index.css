@@ -8,6 +8,16 @@
   --ast-global-color-6: rgba(224,214,213,0.48);
   --ast-global-color-7: #424242;
   --ast-global-color-8: #000000;
+  --spacer-size: 600px;
+  --e-global-color-astglobalcolor0: #000000;
+  --e-global-color-astglobalcolor1: #000000;
+  --e-global-color-astglobalcolor2: #000000;
+  --e-global-color-astglobalcolor3: rgba(0,0,0,0.6);
+  --e-global-color-astglobalcolor4: #faedeb;
+  --e-global-color-astglobalcolor5: #FFFFFF;
+  --e-global-color-astglobalcolor6: rgba(224,214,213,0.48);
+  --e-global-color-astglobalcolor7: #424242;
+  --e-global-color-astglobalcolor8: #000000;
 }
 
 body {
@@ -74,13 +84,18 @@ code {
 
 /* Footer CSS */
 .footer{
-  border: 1px solid red;
+  width: 95%;
   text-align: center;
-  background-color:  #F3F1F6;
+  background-color: #faedeb;
+  margin-left: auto;
+  margin-right: auto;
 }
 .subscribe h3{
-  font-size: 29px;
+  font-size: 35px;
   text-transform: capitalize;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: 700;
 }
 .subscribeInput{
   padding: 25px;
@@ -91,6 +106,10 @@ code {
   margin: 5px;
   display: inline-block;
   cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
 }
 .subscribeInput .inputText{
   width: 30%;
@@ -102,16 +121,16 @@ code {
   background-color: black;
 }
 .subscribeInput .submit-btn:hover{
-  background-color: #8E43F0;
-  border: 1px solid #8E43F0;;
+ color:var(--ast-global-color-6) ;
+ 
 }
 .nav-elements-list ul{
   display: flex;
   align-items: center;
  justify-content: center;
   list-style-type: none;
-  font-size: 20px;
-  
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 .nav-elements-list ul a{
   margin: 0 20px  0 20px;
@@ -122,7 +141,7 @@ code {
 .socail-media-handles img{
   height: auto;
   max-width: 30px;
-  margin: 20px 10px 0 10px;
+  margin: 0px 10px 40px 10px;
   transition: 0.2s;
 }
 .socail-media-handles img:hover{
@@ -216,9 +235,153 @@ ul.products {
   list-style: none;
 }
 
+/* CSS for Navbar */
 
+form {
+  margin-right: 10px;
+}
 
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+}
 
+#logo{
+  margin-left: 300px;
+}
 
+.nav-item {
+  margin-top: 5px;
+}
 
+/* Carousel */
+ .carousel{
+ height: 80%;
+  margin: auto;
+  width: 95%;
+  display: flex;
+  justify-content: right;
+  background-color: #FAEDEB;
+  margin-bottom: 50px;
+ }
+ .carousel-text{
+  margin: auto;
+  width: 500px;
+ }
+ .carousel-text h6{
+  font-size: 13px;
+  color: var(--ast-global-color-3);
+  text-transform: uppercase;
+  margin-bottom: 0;
+ }
+ .carousel-text h1{
+  font-size: 55px;
+  margin-top: 2px;
+ }
+ .carousel-button{
+  
+  background-color: #000000;
+  padding: 15px;
+  display: inline-block;
+ }
+ .carousel-text a{
+  font-size: 15px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  letter-spacing: 1px;
+ }
+ .carousel-text a:hover{
+  color:var(--ast-global-color-6) ;
+  transition: 0.2s;
+ }
+ .carousel-image{
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow:hidden;
+  margin-right: 55px;
+ }
+ .carousel-image .front{
+  position: relative;
+  top: 50;
+  left: 20;
+  height: 80%;
+  margin-top: 70px;
+  
+ }
+ .carousel-image .back{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  margin-top:-60px;
+  
+ }
+ /* Elementor section */
+  
+ .container-overlay{
+ width: 95%;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+ 
+ .elementor-section{
+ 
+ width: auto;
+ padding: 25%;
+  background-attachment: fixed;
+  background-image: url("../public/images/bg-1.jpg");
+  background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+ }
 
+ .elementor-container{
+ 
+  height: 80%;
+  text-align: center;
+  color: white;
+  width: 800px;
+  padding: 25px;
+ 
+ }
+ .elementor-head h6{
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 5px 5px 20px black;
+ }
+ .elementor-content-bold h2{
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 5px 5px 20px black;
+  font-size: 36px;
+ }
+ .elementor-content-small h4{
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 5px 5px 20px black;
+  font-size: 22px;
+  margin-bottom: 40px;
+ }
+  
+ .shop-collection-button a{
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #000000;
+  color: white;
+  padding: 15px 30px;
+  margin-top: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: 0.2s;
+ }
+ .shop-collection-button a:hover{
+  color: var( --ast-global-color-6);
+  transition: 0.2s;
+ }
