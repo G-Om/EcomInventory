@@ -84,13 +84,18 @@ code {
 
 /* Footer CSS */
 .footer{
-  border: 1px solid red;
+  width: 95%;
   text-align: center;
-  background-color:  #F3F1F6;
+  background-color: #faedeb;
+  margin-left: auto;
+  margin-right: auto;
 }
 .subscribe h3{
-  font-size: 29px;
+  font-size: 35px;
   text-transform: capitalize;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: 700;
 }
 .subscribeInput{
   padding: 25px;
@@ -101,6 +106,10 @@ code {
   margin: 5px;
   display: inline-block;
   cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
 }
 .subscribeInput .inputText{
   width: 30%;
@@ -112,16 +121,16 @@ code {
   background-color: black;
 }
 .subscribeInput .submit-btn:hover{
-  background-color: #8E43F0;
-  border: 1px solid #8E43F0;;
+ color:var(--ast-global-color-6) ;
+ 
 }
 .nav-elements-list ul{
   display: flex;
   align-items: center;
  justify-content: center;
   list-style-type: none;
-  font-size: 20px;
-  
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 .nav-elements-list ul a{
   margin: 0 20px  0 20px;
@@ -132,7 +141,7 @@ code {
 .socail-media-handles img{
   height: auto;
   max-width: 30px;
-  margin: 20px 10px 0 10px;
+  margin: 0px 10px 40px 10px;
   transition: 0.2s;
 }
 .socail-media-handles img:hover{
@@ -309,6 +318,70 @@ form {
   left: 30px;
   margin-top:-60px;
   
- } 
+ }
+ /* Elementor section */
+  
+ .container-overlay{
+ width: 95%;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+ 
+ .elementor-section{
+ 
+ width: auto;
+ padding: 25%;
+  background-attachment: fixed;
+  background-image: url("../public/images/bg-1.jpg");
+  background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+ }
 
-
+ .elementor-container{
+ 
+  height: 80%;
+  text-align: center;
+  color: white;
+  width: 800px;
+  padding: 25px;
+ 
+ }
+ .elementor-head h6{
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 5px 5px 20px black;
+ }
+ .elementor-content-bold h2{
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 5px 5px 20px black;
+  font-size: 36px;
+ }
+ .elementor-content-small h4{
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 5px 5px 20px black;
+  font-size: 22px;
+  margin-bottom: 40px;
+ }
+  
+ .shop-collection-button a{
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #000000;
+  color: white;
+  padding: 15px 30px;
+  margin-top: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: 0.2s;
+ }
+ .shop-collection-button a:hover{
+  color: var( --ast-global-color-6);
+  transition: 0.2s;
+ }

@@ -70,8 +70,35 @@ export const HomePage = () => {
                 ></CardComponent>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
 
-            {/* <CardComponent price={"5"} name={"T-Shirt 1"} category={"Men"} image={tshirt}></CardComponent> */}
+      {/* <CardComponent price={"5"} name={"T-Shirt 1"} category={"Men"} image={tshirt}></CardComponent> */}
+      
+      
+      {/* Elementor */}
+      <section class="elementor">
+        <div class="container-overlay">
+          <div class="elementor-background-overlay"></div>
+          <div class="elementor-content">
+            <div class="elementor-section">
+              <div class="elementor-container">
+                <div class="elementor-head">
+                  <h6 class="head">New Collection</h6>
+                </div>
+                <div class="elementor-content-bold">
+                  <h2 class="content-bold">Be different in your own easy!</h2>
+                </div>
+                <div class="elementor-content-small">
+                  <h4 class="content-small">Find your unique style</h4>
+                </div>
+                <div class="shop-collection-button">
+                  <a href="" class="collection-button">
+                    Shop Collection
+                  </a></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
