@@ -26,6 +26,7 @@ jobs:
       - name: npm install and build
         run: 
           npm --version
+          echo npm --version
 
         env: 
           CI: true
@@ -39,6 +40,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
+          echo: ${host}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
