@@ -47,7 +47,7 @@ export const HomePage = () => {
               </li>
               <li className="product-card">
                 <CardComponent
-                  price={"10"}
+                  price={"20"}
                   name={"T-Shirt Name 2"}
                   category={"Women"}
                   image={"./images/card2.jpg"}
