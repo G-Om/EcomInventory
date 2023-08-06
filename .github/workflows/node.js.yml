@@ -68,12 +68,45 @@ jobs:
      - name: SSH deploy
        uses: appleboy/ssh-action@master
        with:
-          host: ${{ secrets.HOST }}
-          username:  ${{ secrets.USER }}
-          key: ${{ secrets.KEY}}
+          host: 13.48.26.109
+          username:  ubuntu
+          key: b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+                NhAAAAAwEAAQAAAYEAu2SKE7O2OdiSMMS3x2I+Y52/wYXsccKsOh0O7XObUKwWbbf8Ax/R
+                FFwpbC3bOsRNPVWqPlA3cPY0HVJ8THLkJlJ/gY85Xw4Nbpv2isKayVUaXu3z0jyBU9Wkq2
+                nznLeWdVVVy2Wh1LUJUxhsCllL13wE1r3JiLSwCwlkB03rCv3wW12OhBrh0l7upplAr/Yz
+                nTS70x9oazh5SRzaTvK+2bOarDbnZGvxI2vw8fGMEE4ERzEY9Z1rJLrH/mu8aNezzYNb/9
+                +PNIqaJvZlHDmxanA/n7e24JoLOB82J1VvtpdOspsAOUNcop0GCwCFsg+lth2AHmpYjp3s
+                oz8oDENxIF54JALvxhwZDreXVoIgRRY5npfz/6EJT3pSSuc3i6JnL47G4bRH3ElGqx5R0a
+                WOKuop/kVyu3eqJFlnJujwqEbMmQz1otoQkHx1st5OIV0NfooNUQBFR+yX/ULY6doK7/7k
+                zcIwkFg+iOeWIVRRpelLDOl8r6+fzaD/8+6dMnGnAAAFkPtAfN77QHzeAAAAB3NzaC1yc2
+                EAAAGBALtkihOztjnYkjDEt8diPmOdv8GF7HHCrDodDu1zm1CsFm23/AMf0RRcKWwt2zrE
+                TT1Vqj5QN3D2NB1SfExy5CZSf4GPOV8ODW6b9orCmslVGl7t89I8gVPVpKtp85y3lnVVVc
+                tlodS1CVMYbApZS9d8BNa9yYi0sAsJZAdN6wr98FtdjoQa4dJe7qaZQK/2M500u9MfaGs4
+                eUkc2k7yvtmzmqw252Rr8SNr8PHxjBBOBEcxGPWdayS6x/5rvGjXs82DW//fjzSKmib2ZR
+                w5sWpwP5+3tuCaCzgfNidVb7aXTrKbADlDXKKdBgsAhbIPpbYdgB5qWI6d7KM/KAxDcSBe
+                eCQC78YcGQ63l1aCIEUWOZ6X8/+hCU96UkrnN4uiZy+OxuG0R9xJRqseUdGljirqKf5Fcr
+                t3qiRZZybo8KhGzJkM9aLaEJB8dbLeTiFdDX6KDVEARUfsl/1C2OnaCu/+5M3CMJBYPojn
+                liFUUaXpSwzpfK+vn82g//PunTJxpwAAAAMBAAEAAAGAN9GTZZn++k0eAsPeIFiNz/uBzo
+                H3c81yot7b/vQUPBv+lFEdEssr6t4nAo/IQUGO5mm5i9U2JoJX9LIIz3bbqeSiEXQZuUxE
+                yQFRF3UvSTB96fAEVEfsmA3H/r1RMQnomevA4hTUdzkz3VoleJGvyzCoelTPDtcPp0H1V0
+                2o6T3KFlUQah5dzN21Rc/ZmnCCYF4AYrt0zZdlXVdoWeLp4Ywj0w+JrnqOuifhfhgeyg6L
+                LK+dyS/KZgbzIsBxv2Mcq+tSXL87kt1elGDFxWGtz027JsNfFZ6zxvODcPaUTkEDVopnQk
+                Rmva0WEIIHLAqZwsm75DIEwIHKzApnZDoGX13yBZ0V7aAbl9aKi23mNIlmBHoj/aihA1db
+                R5yMDI1aVVvn4LV7Yf9frrnUiqPL9ZmiqcpKiinUSjayH4sxDBwVuNPWx3Et/nll2OiR5p
+                osKuj37fST68lgECLEeetIPt8r+T8ICCYufUfqgy0YLAPWpdCI0YJH2/s6caNVxcRxAAAA
+                wEbaW+yc0fvbfa4i+auISiouQBeYB/zFKh/iLJ1yxDwgf7rtrs1844kCpvFiOeHoAfCU0K
+                N0K4eK8MMk5oBkWmY3G7OnCghG1bw3WFt7+V+0SOqbMXQH+gqaDyNOM3kHPMczOd01xNFG
+                iy7dxPqa2Mb8r9zsGEGATPv3SIPi9B9Vd3BxeRyaePMc5Yv0bz3+GkZD1rwIUEXPhBy+kW
+                9Ao90HUx4S2Fc2Yn4w6JFMvpUxtunIO5eP7Vihof79SnH2QwAAAMEA2xubzz1ubiPFIyBc
+                E/EhEefImWN/FcsoSglMh2a8Hf/pOI4L2u8pxBxvNJJlW2J9y0/8GKzfkr1qLtj2BMkqmQ
+                FnJmaar9tushlRkv7FzwLb1NlH3fgXd+QjA4RfQnUQpiJsDQwa6N2zHnCuLrDBJu/K59pC
+                pJ3+GNj5xN8/MJ7pt4pjmq4OBfLr/6UbKgcwTti0xLgsngJnL5SGEtoPHCnHZG33ReJcbG
+                nC4zS0/sEhXZXu8UQLdZERj3v9SxJxAAAAwQDa8eMjH/n4W/fUKAv0Z1bcqPsnAGdG9yCY
+                bDw400iizzNjWqZLJd/Rm3Fo5XqNvnZMrWQoLZHQfwLup/EsaDQV8Ea0LBq4r3//oH2Cub
+                HpPTzjJo9WGalh7N8bvu8dlpqEBGswRyitEXMk5wjZTT7Fp1hIUtuGntZ8rGm1PY6RWbeo
+                vWW12CeoWKHsePr0gHrq2AONXrZuMOAuE2V1e5QfN8qSruHM1aUCHvnk7CEdDKDd/UAYxc
+                wWS69bOaIqIZcAAAAWdWJ1bnR1QGlwLTE3Mi0zMS0yMy04NgECAwQF
           port:  22
-          run: echo ${host}
-          
           script: |
 
 
