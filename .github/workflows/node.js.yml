@@ -67,7 +67,11 @@ jobs:
      - name: Set up SSH
        uses: webfactory/ssh-agent@v0.4.1
        with:
-        ssh-private-key: ${{ secrets.KEY }}
+        ssh-private-key: b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+                QyNTUxOQAAACCsWhmQyX0V9aSC8RJjpgYPjc6ZSG22hSCdb0cmW88SNgAAAJgxgPAfMYDw
+                HwAAAAtzc2gtZWQyNTUxOQAAACCsWhmQyX0V9aSC8RJjpgYPjc6ZSG22hSCdb0cmW88SNg
+                AAAEChasm5yVwXdtV88jOyKRVyz42NQa30hb7wHnW/u2KD3axaGZDJfRX1pILxEmOmBg+N
+                zplIbbaFIJ1vRyZbzxI2AAAAE29tZ2F2YWRlNkBnbWFpbC5jb20BAg==
 
      - name: SSH deploy
        uses: appleboy/ssh-action@master
