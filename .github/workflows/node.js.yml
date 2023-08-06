@@ -30,32 +30,50 @@ jobs:
         env: 
           CI: true
 
+  # deploy:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+
+  #     - name: Set up SSH
+  #       uses: webfactory/ssh-agent@v0.4.1
+  #       with:
+  #         ssh-private-key: ${{ secrets.KEY }}
+
+  #     - name: SSH into Remote Server and Execute Script
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.HOST}}
+  #         username: ${{ secrets.USER}}
+  #         key: ${{ secrets.KEY }}
+  #         port: 22
+  #         script: |
+
+  #           cd ~/EcomInventory/frontend/EcomInventory  
+  #           # Execute the remote script
+  #           git pull origin main
+
+  #         # Optional: Capture output to a log file
+  #         out: deployment.log
+
+
   deploy:
+    needs: [build]
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.KEY }}
-
-      - name: SSH into Remote Server and Execute Script
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY }}
-          port: 22
+     - name: SSH deploy
+       uses: appleboy/ssh-action@master
+       with:
+          host: ${{ secrets.HOST }}
+          username:  ${{ secrets.USER }}
+          ssh-private-key:  ${{ secrets.KEY }}
+          port:  ${{ secrets.PORT }}
           script: |
+
 
             cd ~/EcomInventory/frontend/EcomInventory  
             # Execute the remote script
             git pull origin main
-
-          # Optional: Capture output to a log file
-          out: deployment.log
-
-
