@@ -75,45 +75,6 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-
-      {/* 2 Big images tray */}
-      <section className="tray-big">
-        <div className="tray-cont col">
-          <div className="bigtray-img row-6">
-            <div className="img1-cont">
-              <div className="img-padding">
-                <a href="#">
-                  <img src="./images/collection-02.jpg"></img>
-                </a>
-              </div>
-            </div>
-            <div className="category">
-              <div className="text-populated">
-                <h6>MEN</h6>
-              </div>
-            </div>
-            <div className="widget-heading-outer">
-              <div className="heading-container">
-                <h2 className="heading">
-                  The base collection - Ideal every day.
-                </h2>
-              </div>
-            </div>
-            <div style={{ width: "100%" }}>
-              <div className="text-populated">
-                <a href="#">
-                  <span class="button-wrapper">
-                    <span class="button-text">Shop Now</span>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="bigtray-img row-6">
-            <div className="big-img"></div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
