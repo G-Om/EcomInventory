@@ -64,6 +64,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+     - name: Set up SSH
+       uses: webfactory/ssh-agent@v0.4.1
+       with:
+        ssh-private-key: ${{ secrets.KEY }}
+
      - name: SSH deploy
        uses: appleboy/ssh-action@master
        with:
