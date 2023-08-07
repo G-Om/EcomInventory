@@ -163,7 +163,7 @@ code {
 /*HomePage -tray*/
 
 .card-tray {
-  padding: 100px 0 0;
+  padding: 60px 0 0;
 }
 
 .card-container {
@@ -322,8 +322,9 @@ form {
  /* Elementor section */
   
  .container-overlay{
- width: 95%;
-  margin-bottom: 50px;
+  width: 95%;
+  margin-top: 100px;
+  margin-bottom: 150px;
   margin-left: auto;
   margin-right: auto;
  }
@@ -385,3 +386,65 @@ form {
   color: var( --ast-global-color-6);
   transition: 0.2s;
  }
+
+ /* Big Tray */
+
+.cont {
+  max-width: 1160px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+.imgcont {
+  text-align: center;
+  width: 50%;
+}
+
+.cont-inner {
+  justify-content: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.cont-inner img {
+  width: inherit;
+}
+.img {
+  padding-bottom: 25px;
+}
+
+.widget-container-big {
+  padding: 0 25px 10px;
+
+}
+.widget-container-big h2{
+  margin: 0;
+}
+.button-cont {
+  width: 100%;
+  justify-content: center;
+}
+.button-link {
+  display: inline-block;
+  height: inherit;
+  text-decoration: none;
+  background-color: var(--ast-global-color-2);
+  padding: 15px;
+  margin: 0;
+}
+.button-content-wrapper {
+  text-decoration: inherit;
+  justify-content: center;
+  display: inline-block;
+}
+.button-text {
+  flex-grow: 1;
+  order: 10;
+  display: inline-block;
+  color: var(--ast-global-color-5);
+}

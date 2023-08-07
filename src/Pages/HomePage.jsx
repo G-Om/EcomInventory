@@ -74,8 +74,39 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* <CardComponent price={"5"} name={"T-Shirt 1"} category={"Men"} image={tshirt}></CardComponent> */}
-      
+      {/* Big Tray */}
+      <section className="big-tray">
+        <div className="cont">
+          <div className="imgcont">
+            <div className="cont-inner">
+              <div className="img">
+              <img src="./images/collection-02.jpg" alt=""></img>
+              </div>
+              <div className="product-category">MEN</div>
+              <div class="widget-container-big">
+                <h2 class="heading-title">
+                  The base collection - Ideal every day.
+                </h2> 
+              </div>
+              <div className="button-cont">
+                <a href="#" className="button-link">
+                  <span class="button-content-wrapper">
+                    <span class="button-text">Shop Now</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="imgcont">
+            <div className="cont-inner">
+              <img src="./images/collection-01.jpg" alt=""></img>
+            </div>
+          </div>
+        </div>
+      </section>
+
+          
       
       {/* Elementor */}
       <section class="elementor">
