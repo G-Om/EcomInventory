@@ -64,8 +64,13 @@ jobs:
           username: ${{ secrets.USER}}
           ssh-private-key: ${{ secrets.KEY }}
 
+      - name: Update Known Hosts
+        run: |
+          ssh-keyscan 16.171.204.236
+
       - name: Restart PM2 Process
         run: |
+          echo $host
           ssh ubuntu@16.171.204.236 "pm2 restart frontend-ecominventory"
 
 
