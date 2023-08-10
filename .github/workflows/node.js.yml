@@ -66,6 +66,7 @@ jobs:
           port:  22
           script: |
             cd ~/.nvm/versions/node/v18.17.0/bin
+            ls
             pm2 restart 0
 
 
