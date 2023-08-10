@@ -66,8 +66,7 @@ jobs:
           port:  22
           script: |
             cd ~/.nvm/versions/node/v18.17.0/lib/node_modules/pm2/bin
-            ls
-            pm2 restart 0
+            pm2 restart frontend-ecominventory
 
 
   
