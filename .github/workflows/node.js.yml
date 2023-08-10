@@ -56,10 +56,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-          
-      - name: Restart pm2 process
-        run: |
-          pm2 restart frontend-ecominventory
+
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USER}}
+          key: ${{ secrets.KEY}}
+          port:  22
+          script: |
+            
+            cd ~/EcomInventory/frontend/EcomInventory
+            pm2 restart frontend-ecominventory
 
 
   
