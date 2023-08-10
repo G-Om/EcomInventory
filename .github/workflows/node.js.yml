@@ -63,7 +63,7 @@ jobs:
           
       - name: Restart pm2 process
         run: |
-          pm2 restart <process-name>
+          pm2 restart frontend-ecominventory
 
 
   
