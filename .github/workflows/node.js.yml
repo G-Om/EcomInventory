@@ -57,16 +57,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy using SSH
-        uses: appleboy/ssh-action@v0.1.4
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
         with:
           host: ${{ secrets.HOST}}
           username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY}}
-          port:  22
-          script: |
-            cd ~/.nvm/versions/node/v18.17.0/lib/node_modules/pm2/bin
-            pm2 restart frontend-ecominventory
+          ssh-private-key: ${{ secrets.KEY }}
+
+      - name: Restart PM2 Process
+        run: |
+          ssh ${username}@${host} "pm2 restart frontend-ecominventory"
 
 
   
