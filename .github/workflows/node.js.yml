@@ -56,15 +56,17 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
-
-    - name: Run Script on Remote VM
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.KEY}}
+    - name: Set Up SSH Key
       run: |
-        echo "$SSH_PRIVATE_KEY" > id_ed
-        ssh -T -o StrictHostKeyChecking=no -i id_ed ubuntu@16.171.204.236
+        mkdir -p ~/.ssh
+        echo "${{ secrets.KEY }}" > ~/.ssh/id_ed
+        chmod 600 ~/.ssh/id_ed
+    - name: Run Script on Remote VM
+      run: |
+        ssh -T -o StrictHostKeyChecking=no -i ~/.ssh/id_ed ubuntu@16.171.204.236
         ls
         ./restart.sh
+        
         
 
   
