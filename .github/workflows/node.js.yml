@@ -48,7 +48,8 @@ jobs:
             cd ~/EcomInventory/frontend/EcomInventory  
             # Execute the remote script
             git pull origin main
-            
-            # To install missing dependencies
-            npm install
+     
+     - name: Install dependencies
+       run: npm install
+          
             
