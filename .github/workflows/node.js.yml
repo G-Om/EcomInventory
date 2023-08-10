@@ -17,7 +17,7 @@ jobs:
        with:
           host: ${{ secrets.HOST}}
           username: ${{ secrets.USER}}
-          key: ${{ secrets.SSH_KEY}}
+          key: ${{ secrets.KEY}}
           port:  22
           script: |
 
@@ -61,9 +61,9 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.KEY}}
       run: |
-        chmod 600 id_rsa
-        echo "$SSH_PRIVATE_KEY" > id_rsa
-        ssh -T -o StrictHostKeyChecking=no -i id_rsa ubuntu@16.171.204.236
+        chmod 600 id_ed
+        echo "$SSH_PRIVATE_KEY" > id_ed
+        ssh -T -o StrictHostKeyChecking=no -i id_ed ubuntu@16.171.204.236
         ls
         ./restart.sh
         
