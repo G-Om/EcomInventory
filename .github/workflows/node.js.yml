@@ -61,8 +61,6 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.KEY }}
       run: |
-        chmod 600 /dev/shm/id_rsa
-        echo "$SSH_PRIVATE_KEY" > /dev/shm/id_rsa
         ssh -i /dev/shm/id_rsa ubuntu@16.171.204.236 'bash -s' < script.sh
 
 
