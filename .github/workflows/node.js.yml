@@ -6,7 +6,25 @@ name: CICD for EcomInventory
 on:
   push:
     branches: [ "main" ]
+
 jobs:
+
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+     - name: SSH deploy
+       uses: appleboy/ssh-action@v0.1.4
+       with:
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USER}}
+          key: ${{ secrets.KEY}}
+          port:  22
+          script: |
+
+            cd ~/EcomInventory/frontend/EcomInventory  
+            # Execute the remote script
+            git pull origin main
+
   build:
 
     runs-on: ubuntu-latest 
@@ -27,31 +45,8 @@ jobs:
         run: 
           npm --version
           echo npm --version
+          npm install
         env: 
           CI: true
 
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-
-    steps:
-
-     - name: SSH deploy
-       uses: appleboy/ssh-action@v0.1.4
-       with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY}}
-          port:  22
-          script: |
-
-            cd ~/EcomInventory/frontend/EcomInventory  
-            # Execute the remote script
-            git pull origin main
-    
-     - name: Display GITHUB_WORKSPACE
-       run: echo "The value of GITHUB_WORKSPACE is ${{ github.workspace }}"
-    #  - name: Install dependencies
-    #    run: npm install
-    #    working-directory: ~/EcomInventory/frontend/EcomInventory
-        
+  
