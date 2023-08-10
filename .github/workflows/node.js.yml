@@ -55,7 +55,7 @@ jobs:
 
     steps:
     - name: SSH deploy
-      run: ssh -o StrictHostKeyChecking=no -v ubuntu@16.171.204.236 -i ${{ secrets.KEY}} 'bash ~/restart.sh'
+      run: ssh -o StrictHostKeyChecking=no -v ubuntu@16.171.204.236 -i "${{ secrets.KEY}}" 'bash ~/restart.sh'
         
         
 
