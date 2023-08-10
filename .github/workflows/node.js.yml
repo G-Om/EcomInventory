@@ -61,9 +61,8 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.KEY}}
       run: |
-        chmod 600 id_ed
-        echo "$SSH_PRIVATE_KEY" > id_ed
-        ssh -T -o StrictHostKeyChecking=no -i id_ed ubuntu@16.171.204.236
+        
+        ssh -T -o StrictHostKeyChecking=no -i $SSH_PRIVATE_KEY ubuntu@16.171.204.236
         ls
         ./restart.sh
         
