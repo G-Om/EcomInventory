@@ -63,7 +63,8 @@ jobs:
           SSH_HOST: ${{ secrets.HOST }}
           SSH_USERNAME: ${{ secrets.USERNAME }}
         run: |
-          pm2 restart 0
+          ls
+          ./restart.sh
 
 
   
