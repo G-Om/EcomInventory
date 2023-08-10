@@ -54,16 +54,15 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
-    - name: Set Up SSH Key
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.KEY }}" > ~/.ssh/id_ed
-        chmod 600 ~/.ssh/id_ed
-    - name: Run Script on Remote VM
-      run: |
-        ssh -T -o StrictHostKeyChecking=no -i ~/.ssh/id_ed ubuntu@16.171.204.236 'bash -s' < restart.sh
+    - name: SSH deploy
+      uses: appleboy/ssh-action@v0.1.4
+      with:
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USER}}
+          key: ${{ secrets.KEY}}
+          port:  22
+          script: |
+            sudo ./restart.sh
         
         
 
