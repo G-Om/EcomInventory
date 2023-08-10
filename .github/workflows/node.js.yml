@@ -56,10 +56,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Install pm2
-        run: |
-          npm install -g pm2
           
       - name: Restart pm2 process
         run: |
