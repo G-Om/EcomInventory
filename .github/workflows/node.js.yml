@@ -63,8 +63,6 @@ jobs:
           SSH_HOST: ${{ secrets.HOST }}
           SSH_USERNAME: ${{ secrets.USERNAME }}
         run: |
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
           pm2 restart 0
 
 
