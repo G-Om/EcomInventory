@@ -55,7 +55,7 @@ jobs:
 
     steps:
     - name: SSH deploy
-      run: ssh -v ubuntu@16.171.204.236 'bash ~/restart.sh'
+      run: ssh -v ubuntu@16.171.204.236 -i ${{ secrets.KEY}} 'bash ~/restart.sh'
         
         
 
