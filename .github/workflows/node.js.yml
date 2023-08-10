@@ -57,17 +57,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy using SSH
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY}}
-          port:  22
-          script: |
-            chmod +x pm2
-            pm2 restart 0
-            cat /usr/local/sbin/myvm.txt
+      - name: Deploy using PM2
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          SSH_HOST: ${{ secrets.HOST }}
+          SSH_USERNAME: ${{ secrets.USERNAME }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          pm2 restart 0
 
 
   
