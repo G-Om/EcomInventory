@@ -46,7 +46,6 @@ jobs:
           npm --version
           echo npm --version
           npm install
-          npm install -g pm2
         env: 
           CI: true
   
