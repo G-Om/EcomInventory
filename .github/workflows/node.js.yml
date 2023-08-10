@@ -62,7 +62,9 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.KEY }}
       run: |
         echo $SSH_PRIVATE_KEY
-        ssh -i $SSH_PRIVATE_KEY ubuntu@16.171.204.236 'bash -s' < restart.sh
-
+        ssh -i "$SSH_PRIVATE_KEY" ubuntu@ec2-16-171-204-236.eu-north-1.compute.amazonaws.com
+        ls
+        ./restart.sh
+        
 
   
