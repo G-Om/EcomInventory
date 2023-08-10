@@ -39,7 +39,7 @@ export const HomePage = () => {
             <ul className="products column-4">
               <li className="product-card">
                 <CardComponent
-                  price={"5"}
+                  price={"15"}
                   name={"T-Shirt Name 1"}
                   category={"Men"}
                   image={"./images/card1.jpg"}
