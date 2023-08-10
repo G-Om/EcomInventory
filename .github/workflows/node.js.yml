@@ -65,7 +65,7 @@ jobs:
           key: ${{ secrets.KEY}}
           port:  22
           script: |
-            cd ~/.nvm/versions/node/v18.17.0/bin
+            cd ~/.nvm/versions/node/v18.17.0/lib/node_modules/pm2/bin
             ls
             pm2 restart 0
 
