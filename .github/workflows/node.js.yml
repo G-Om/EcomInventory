@@ -55,5 +55,15 @@ jobs:
 
     steps:
       - name: Restart PM2 on vm
-        run: pm2 restart 0
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USER}}
+          key: ${{ secrets.KEY}}
+          port:  22
+          script: |
+
+            pm2 restart frontend-ecominventory
+
+
   
