@@ -64,7 +64,6 @@ jobs:
 
       - name: Restart PM2 Process
         run: |
-          echo $host
           ssh -o StrictHostKeyChecking=no ubuntu@16.171.204.236 "pm2 restart frontend-ecominventory"
 
 
