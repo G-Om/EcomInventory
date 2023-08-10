@@ -54,17 +54,16 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Deploy using PM2
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
-          SSH_HOST: ${{ secrets.HOST }}
-          SSH_USERNAME: ${{ secrets.USERNAME }}
-        run: |
-          ls
-          ./restart.sh
+     - name: SSH deploy
+       uses: appleboy/ssh-action@v0.1.4
+       with:
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USER}}
+          key: ${{ secrets.KEY}}
+          port:  22
+          script: |
+            ls
+            ./restart.sh
 
 
   
