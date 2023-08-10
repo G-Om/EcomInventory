@@ -62,7 +62,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.KEY }}
       run: |
         echo $SSH_PRIVATE_KEY
-        ssh -i $SSH_PRIVATE_KEY ubuntu@16.171.204.236 'bash -s' < script.sh
+        ssh -i $SSH_PRIVATE_KEY ubuntu@16.171.204.236 'bash -s' < restart.sh
 
 
   
