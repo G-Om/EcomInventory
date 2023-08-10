@@ -54,16 +54,16 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-      - name: Restart PM2 on vm
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY}}
-          port:  22
-          script: |
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            pm2 restart frontend-ecominventory
+      - name: Install pm2
+        run: |
+          npm install -g pm2
+          
+      - name: Restart pm2 process
+        run: |
+          pm2 restart <process-name>
 
 
   
