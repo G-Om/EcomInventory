@@ -55,14 +55,7 @@ jobs:
 
     steps:
     - name: SSH deploy
-      uses: appleboy/ssh-action@v0.1.4
-      with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY}}
-          port:  22
-          script: |
-            sudo ./restart.sh
+      run: ssh -v ubuntu@16.171.204.236 'bash ~/restart.sh'
         
         
 
