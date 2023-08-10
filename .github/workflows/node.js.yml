@@ -61,8 +61,10 @@ jobs:
           key:  ${{ secrets.KEY }}
           port: 22
           script: |
-          
-               nvm instal
+             curl -o-   https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh    | bash
+              . ~/.nvm/nvm.sh
+
+               nvm instal 18
                npm install -g pm2
                cd ~/CICD
                git pull origin main
