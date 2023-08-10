@@ -63,9 +63,7 @@ jobs:
         chmod 600 ~/.ssh/id_ed
     - name: Run Script on Remote VM
       run: |
-        ssh -T -o StrictHostKeyChecking=no -i ~/.ssh/id_ed ubuntu@16.171.204.236
-        ls
-        ./restart.sh
+        ssh -T -o StrictHostKeyChecking=no -i ~/.ssh/id_ed ubuntu@16.171.204.236 'bash -s' < restart.sh
         
         
 
