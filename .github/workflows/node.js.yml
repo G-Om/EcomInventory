@@ -52,10 +52,14 @@ jobs:
   deploy: 
     needs: [build]
     runs-on: ubuntu-latest 
-
+    env:
+     SSH_KEY: ${{ secrets.KEY}}
     steps:
     - name: SSH deploy
-      run: ssh -o StrictHostKeyChecking=no -v ubuntu@16.171.204.236 -i "${{ secrets.KEY}}" 'bash ~/restart.sh'
+      run: |
+        echo "$SSH_KEY" > /tmp/ssh_key
+        chmod 600 /tmp/ssh_key
+        ssh -i /tmp/ssh_key -o StrictHostKeyChecking=no -v ubuntu@16.171.204.236 'bash ~/restart.sh'
         
         
 
