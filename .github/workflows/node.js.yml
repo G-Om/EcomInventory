@@ -54,16 +54,16 @@ jobs:
     runs-on: ubuntu-latest 
 
     steps:
-     - name: SSH deploy
-       uses: appleboy/ssh-action@v0.1.4
-       with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY}}
-          port:  22
-          script: |
-            ls
-            ./restart.sh
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Run Script on Remote VM
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+      run: |
+        chmod 600 /dev/shm/id_rsa
+        echo "$SSH_PRIVATE_KEY" > /dev/shm/id_rsa
+        ssh -i /dev/shm/id_rsa ubuntu@16.171.204.236 'bash -s' < script.sh
 
 
   
