@@ -59,10 +59,11 @@ jobs:
 
     - name: Run Script on Remote VM
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.KEY}}
       run: |
-        echo $SSH_PRIVATE_KEY
-        ssh -T -o StrictHostKeyChecking=no -i "$SSH_PRIVATE_KEY" ubuntu@16.171.204.236
+        chmod 600 id_rsa
+        echo "$SSH_PRIVATE_KEY" > id_rsa
+        ssh -T -o StrictHostKeyChecking=no -i id_rsa ubuntu@16.171.204.236
         ls
         ./restart.sh
         
