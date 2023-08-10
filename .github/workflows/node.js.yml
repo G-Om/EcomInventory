@@ -65,9 +65,8 @@ jobs:
           key: ${{ secrets.KEY}}
           port:  22
           script: |
-            source ~/.bashrc 
-            cd ~/EcomInventory/frontend/EcomInventory
-            pm2 restart frontend-ecominventory
+
+            /home/ubuntu/.nvm/versions/node/v18.17.0/bin/pm2 restart frontend-ecominventory
 
 
   
