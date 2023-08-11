@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 :root {
   --ast-global-color-0: #000000;
   --ast-global-color-1: #000000;
@@ -590,4 +591,60 @@ input[type="password"]{
 }
 .signup-form{
   display: flex;
+}
+
+/* Elementor 2 */
+.elementor-2{
+  width: 95%;
+  margin: auto;
+  background-image: linear-gradient(90deg,var(--e-global-color-astglobalcolor4 ) 55%,var(--e-global-color-astglobalcolor5 ) 55%);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.elementor2-body{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+   
+}
+.elementor2-image img{
+  position:  relative;
+  top: -50px;
+  left: 0px;
+}
+.elementor2-text{
+  margin-left: 150px;
+  font-family: 'Poppins', sans-serif;
+}
+.elementor2-text .elemenotr2-text-gender h6{
+  text-transform: uppercase;
+  color: var(--ast-global-color-7);
+  font-size: 14px;
+}
+.elementor2-text-boldHeading h2{
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 40px;
+  color: #000000;
+}
+.elementor2-text-description p{
+  font-size: 13px;
+  color: var(--ast-global-color-7);
+  letter-spacing: 0.8px;
+  line-height: 22px;
+  margin-bottom: 45px;
+}
+.elementor2-text-button a{
+  text-decoration: none;
+  background-color: #000000;
+  color: #FAFAFA;
+  font-size: 14px;
+  padding: 15px 25px;
+   
+}
+.elementor2-text-button a:hover{
+  color: var(--ast-global-color-6);
+  transition: 0.2s;
 }
