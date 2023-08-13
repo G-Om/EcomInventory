@@ -480,3 +480,43 @@ nav {
   display: inline-block;
   color: var(--ast-global-color-5);
 }
+
+/* 2 Cards of men and women */
+
+#products {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  align-items: center;
+  padding: 0;
+}
+
+#products li {
+  list-style: none;
+  padding: 10px;
+}
+
+#products li img {
+  height: 35rem;
+}
+
+.product-button {
+  position: relative;
+  text-align: center;
+  bottom: 55px;
+  background-color: rgba(255, 255, 255, 0.827);
+  padding: 10px 0;
+  margin: 0 1rem;
+}
+
+.product-button:hover {
+  background-color: white;
+}
+
+.product-button {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 13px;
+}
+

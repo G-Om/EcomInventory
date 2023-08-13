@@ -1,5 +1,6 @@
 import { CardComponent } from "../Components/CardComponent";
 
+
 export const HomePage = () => {
   return (
     <div>
@@ -132,6 +133,23 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <ul id="products">
+          <li>
+              <img src="./images/men.jpg" alt="men" />
+              <a href="">
+                <div className="product-button">MEN</div>
+              </a>
+          </li>
+          <li>
+              <img src="./images/women.jpg" alt="women" />
+              <a href="">
+                <div className="product-button">WOMEN</div>
+              </a>
+          </li>
+        </ul>
       </section>
     </div>
   );
