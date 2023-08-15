@@ -5,6 +5,7 @@ import { HomePage } from "./Pages/HomePage"
 import {LoginSignup} from "./Pages/LoginSignup"
 import { AboutPage } from "./Pages/AboutPage"
 
+
 export const MainComponent = ()=>{
 
     return(
@@ -18,13 +19,7 @@ export const MainComponent = ()=>{
                 <Route path="about" element={<AboutPage></AboutPage>}/>
                 
             </Routes>
-
-
             <FooterComponent></FooterComponent>
-            {/* <NavbarComponent></NavbarComponent>
-            <HomePage></HomePage>
-            <FooterComponent></FooterComponent>
-            <LoginSignup></LoginSignup> */}
         </div>
     )
 }
