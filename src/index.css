@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 :root {
   --ast-global-color-0: #000000;
   --ast-global-color-1: #000000;
@@ -479,4 +480,171 @@ nav {
   order: 10;
   display: inline-block;
   color: var(--ast-global-color-5);
+}
+/* Login Signup Page */
+.top-buttons {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 15%;
+  padding: 25px;
+  text-align: center;
+}
+.top-buttons button {
+  color: #FAFAFA;
+  border: none;
+  width: 100px;
+  margin: -2px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  background: #000000;
+  cursor: pointer;
+}
+.top-buttons .signup-btn {
+  border-radius: 50px 0 0 50px; 
+}
+.top-buttons .signup-btn:hover{
+  background-color: #f3f2f2;
+  color: #000000;
+}
+.top-buttons .login-btn {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.top-buttons .login-btn:hover{
+  background-color: #f3f2f2;
+  color: #000000;
+}
+.signup-form, .login-form{
+  width: 100%;
+  height: 85%;
+  padding: 10px 40px;
+ display: flex;
+ justify-content: center;
+}
+.signup-form form, .login-form form{
+  width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 20px grey;
+  padding: 50px 25px 50px 25px;
+}
+.signup-form label, .login-form label{
+  font-size: 40px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.signup-form input[type="text"],
+input[type="email"],
+input[type="password"]{
+  display: block;
+  border-color: var(--ast-global-color-6);
+  background: #f3f2f2;
+  border-radius: 2px;
+  padding:12px;
+  width: 500px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  outline: none;
+}
+.signup-form input[type="submit"], .login-form input[type="submit"]{
+  display: block;
+  border-color: var(--ast-global-color-6);
+  background: #000000;
+  color:#FAFAFA;
+  border-radius: 2px;
+  padding:12px;
+  width: 500px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border: none;
+   
+}
+.signup-form input[type="submit"]:hover, .login-form input[type="submit"]:hover{
+  color: var(--ast-global-color-6);
+}
+.signup-form a, .login-form a{
+  text-align: center;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+}
+.signup-form a:hover, .login-form a:hover{
+  color: var(--ast-global-color-7);
+}
+.login-form{
+  display: flex;
+}
+.signup-form{
+  display: flex;
+}
+
+/* Elementor 2 */
+.elementor-2{
+  width: 95%;
+  margin: auto;
+  background-image: linear-gradient(90deg,var(--e-global-color-astglobalcolor4 ) 55%,var(--e-global-color-astglobalcolor5 ) 55%);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.elementor2-body{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+   
+}
+.elementor2-image img{
+  position:  relative;
+  top: -50px;
+  left: 0px;
+}
+.elementor2-text{
+  margin-left: 150px;
+  font-family: 'Poppins', sans-serif;
+}
+.elementor2-text .elemenotr2-text-gender h6{
+  text-transform: uppercase;
+  color: var(--ast-global-color-7);
+  font-size: 14px;
+}
+.elementor2-text-boldHeading h2{
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 40px;
+  color: #000000;
+}
+.elementor2-text-description p{
+  font-size: 13px;
+  color: var(--ast-global-color-7);
+  letter-spacing: 0.8px;
+  line-height: 22px;
+  margin-bottom: 45px;
+}
+.elementor2-text-button a{
+  text-decoration: none;
+  background-color: #000000;
+  color: #FAFAFA;
+  font-size: 14px;
+  padding: 15px 25px;
+   
+}
+.elementor2-text-button a:hover{
+  color: var(--ast-global-color-6);
+  transition: 0.2s;
 }
