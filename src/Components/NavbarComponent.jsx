@@ -8,7 +8,7 @@ export const NavbarComponent = () => {
         <nav>
           <ul id="hero">
             <li>
-              <a href="">BUY T-SHIRTS</a>
+              <a href="/">BUY T-SHIRTS</a>
             </li>
             <li>
               <a href="">WOMEN</a>
@@ -17,16 +17,18 @@ export const NavbarComponent = () => {
               <a href="">MEN</a>
             </li>
             <li>
-              <a href="">ABOUT</a>
+              <a href="/about">ABOUT</a>
             </li>
           </ul>
         </nav>
         <div id="logo">
-          <img src="./images/logo-regular.png" alt="logo" />
+          <a href="/">  
+            <img src="./images/logo-regular.png" alt="logo" />
+          </a>
         </div>
         <div id="cart-logo">
           <GiShoppingCart size="30px"/>
-          <a href="">Log In</a>
+          <a href="/login">Login/Signup</a>
         </div>
       </header>
     </div>
