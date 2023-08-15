@@ -19,13 +19,7 @@ export const MainComponent = ()=>{
                 <Route path="about" element={<AboutPage></AboutPage>}/>
                 
             </Routes>
-
-
             <FooterComponent></FooterComponent>
-            <NavbarComponent></NavbarComponent>
-            <HomePage></HomePage>
-            <FooterComponent></FooterComponent>
-            <LoginSignup></LoginSignup>
         </div>
     )
 }
