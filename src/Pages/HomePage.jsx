@@ -80,13 +80,13 @@ export const HomePage = () => {
           <div className="imgcont">
             <div className="cont-inner">
               <div className="img">
-              <img src="./images/collection-02.jpg" alt=""></img>
+                <img src="./images/collection-02.jpg" alt=""></img>
               </div>
               <div className="product-category">MEN</div>
               <div class="widget-container-big">
                 <h2 class="heading-title">
                   The base collection - Ideal every day.
-                </h2> 
+                </h2>
               </div>
               <div className="button-cont">
                 <a href="#" className="button-link">
@@ -106,8 +106,6 @@ export const HomePage = () => {
         </div>
       </section>
 
-          
-      
       {/* Elementor */}
       <section class="elementor">
         <div class="container-overlay">
@@ -127,8 +125,37 @@ export const HomePage = () => {
                 <div class="shop-collection-button">
                   <a href="" class="collection-button">
                     Shop Collection
-                  </a></div>
+                  </a>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="elementor-2">
+        <div className="elementor2-body">
+          <div className="elementor2-image">
+            <a href="#">
+              <img src="./images/collection-03.jpg"></img>
+            </a>
+          </div>
+          <div className="elementor2-text">
+            <div className="elemenotr2-text-gender">
+              <h6>Women</h6>
+            </div>
+            <div className="elementor2-text-boldHeading">
+              <h2>Spring Summer Collection</h2>
+            </div>
+            <div className="elementor2-text-description">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id
+                leo tempor, congue justo at, lobortis orci. Aliquam venenatis
+                dui lectus, eu convallis turpis convallis et. Pellentesque
+              </p>
+            </div>
+            <div className="elementor2-text-button">
+              <a href="#">See Whole Collection</a>
             </div>
           </div>
         </div>

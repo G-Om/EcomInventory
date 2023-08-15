@@ -6,45 +6,19 @@ name: CICD for EcomInventory
 on:
   push:
     branches: [ "main" ]
-jobs:
-  build:
 
+jobs:      
+  deploy: 
     runs-on: ubuntu-latest 
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - name: npm install and build
-        run: 
-          npm --version
-          echo npm --version
-        env: 
-          CI: true
-
-  deploy:
-    needs: [build]
-    runs-on: ubuntu-latest
-
-    steps:
-
      - name: SSH deploy
-       uses: appleboy/ssh-action@v0.1.4
+       uses: appleboy/ssh-action@master
        with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USER}}
-          key: ${{ secrets.KEY}}
-          port:  22
+          host: ${{ secrets.HOST }}
+          username:  ${{ secrets.USER }}
+          key:  ${{ secrets.KEY }}
+          port: 22
           script: |
-
             cd ~/EcomInventory/frontend/EcomInventory  
             # Execute the remote script
             git pull origin main
@@ -52,4 +26,5 @@ jobs:
      - name: Install dependencies
        run: npm install
           
+
             
