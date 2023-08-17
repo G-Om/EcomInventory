@@ -689,3 +689,25 @@ input[type="password"]{
   color: var(--ast-global-color-6);
   transition: 0.2s;
 }
+
+/* Men and women page */
+
+.tray {
+  padding: 20px;
+}
+
+.heading {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.heading h1 {
+  font-size: 55px;
+}
+
+.heading p {
+  margin-top: 55px;
+  font-size: 13px;
+  font-weight: 100;
+}
+

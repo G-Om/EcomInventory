@@ -4,6 +4,8 @@ import { NavbarComponent } from "./Components/NavbarComponent"
 import { HomePage } from "./Pages/HomePage"
 import {LoginSignup} from "./Pages/LoginSignup"
 import { AboutPage } from "./Pages/AboutPage"
+import { MenPage } from "./Pages/MenPage"
+import { WomenPage } from "./Pages/WomenPage"
 
 
 export const MainComponent = ()=>{
@@ -17,7 +19,8 @@ export const MainComponent = ()=>{
                 <Route path="/" element={<HomePage></HomePage>}/>
                 <Route path="login" element={<LoginSignup></LoginSignup>}/>
                 <Route path="about" element={<AboutPage></AboutPage>}/>
-                
+                <Route path="men" element={<MenPage></MenPage>}/>
+                <Route path="women" element={<WomenPage></WomenPage>}/>
             </Routes>
             <FooterComponent></FooterComponent>
         </div>
