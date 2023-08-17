@@ -11,10 +11,10 @@ export const NavbarComponent = () => {
               <a href="/">BUY T-SHIRTS</a>
             </li>
             <li>
-              <a href="">WOMEN</a>
+              <a href="/women">WOMEN</a>
             </li>
             <li>
-              <a href="">MEN</a>
+              <a href="/men">MEN</a>
             </li>
             <li>
               <a href="/about">ABOUT</a>
