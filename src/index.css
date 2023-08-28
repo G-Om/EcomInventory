@@ -693,7 +693,9 @@ input[type="password"]{
 /* Men and women page */
 
 .tray {
-  padding: 20px;
+  /* padding: 20px; */
+  width : 95%;
+  margin: auto;
 }
 
 .heading {
