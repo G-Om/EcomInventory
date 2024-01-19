@@ -1,4 +1,5 @@
 import { CardComponent } from "../Components/CardComponent";
+import { ProductDescriptionComponent } from "../Components/ProductDescriptionComponent";
 
 
 export const HomePage = () => {
@@ -232,6 +233,8 @@ export const HomePage = () => {
           </li>
         </ul>
       </section>
+      <ProductDescriptionComponent></ProductDescriptionComponent>
+
     </div>
   );
 };

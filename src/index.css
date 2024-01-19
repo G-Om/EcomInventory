@@ -870,3 +870,128 @@ margin-bottom: 35px;
   width: 580px;
   /* margin-left: auto; */
 }
+
+/* PRODUCT DESCRIPTION */
+.product-description-component{
+   
+  display: flex; 
+  justify-content: space-between;  
+ 
+}
+.product-image-color-option{
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+}
+.product-desc-gallary-main-image img{
+  height: 700px;
+}
+.product-desc-gallary-main-image img:hover{
+  transform: scale(1.4);
+  overflow: hidden;
+}
+.product-desc-gallary-main-image{
+  overflow: hidden;
+}
+.product-image-color-option img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.left-product-description{
+  width: 550px;
+  margin-left: auto;
+  margin-right: 50px;
+}
+.right-product-description{
+  width: 550px;
+  margin-left: 50px;
+  margin-right: auto;
+}
+.single-product-category a{
+  color: var(--ast-global-color-3);
+  text-transform: uppercase;
+
+}
+.product_title {
+  color: var(--ast-global-color-2);
+  font-weight: 600;
+}
+.woocommerce-Price-currencySymbol{
+  color: var(--ast-global-color-2);
+  font-size: 22px;
+  font-weight: 800;
+}
+.particular-product-desc p{
+  color: var(--ast-global-color-3);
+  box-sizing: inherit;
+}
+.color p{
+  color: var(--ast-global-color-3);
+  font-weight: 800;
+}
+.color-option button{
+  padding: 4px 12px;
+  margin-right: 10px;
+  background-color: #FAFAFA;
+  border: 1px solid  #9a9aa2;
+  color: #9a9aa2;
+}
+.quantity{
+  margin-top: 10px;
+   
+}
+.quantity button{
+  padding: 5px;
+  margin: 4px;
+  margin-top: 2px;
+  width: 30px;
+  background-color: #FAFAFA;
+  border: 1px solid  #9a9aa2;
+  color: #9a9aa2;
+}
+.category-display{
+  margin-top: 10px;
+}
+.category-display a{
+  color: #000000;
+  text-transform: uppercase;
+}
+.category-display span{
+  color: var(--ast-global-color-3);
+  text-transform: uppercase;
+ 
+}
+.product-addition-cart button{
+  color: #FFFFFF;
+  background-color: #9a9aa2;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+hr{
+  background-color: #bab6b6;
+}
+.other-information-toggle button{
+  margin-top: 20px;
+  width: 600px;
+  padding: 8px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 800;
+  border: 1px solid #bab6b6;
+  border-left: none;
+  border-right: none;
+  background-color: #FFFFFF;
+}
+.about-product p,span{
+  color: var(--ast-global-color-3);
+}
+.delivery-return p{
+  color: var(--ast-global-color-3);
+}
+.about-product h6{
+  font-weight: 500px;
+}
+ 
