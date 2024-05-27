@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../Components/Scripts/firebase';  // Adjust the path based on your project structure
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { UserRequests } from '../api/UserRequests.js';
 
 export const LoginSignup = () => {
   const [showSignup, setShowSignup] = useState(true);
@@ -17,7 +18,13 @@ export const LoginSignup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      
+      var data = {
+        email:email,
+        password:password,
+        name:name,
+      } 
+      UserRequests.registerUser(data);
       navigate('/');
     } catch (error) {
       console.error('Signup error:', error.message);
