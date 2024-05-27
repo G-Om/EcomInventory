@@ -6,6 +6,7 @@ import {LoginSignup} from "./Pages/LoginSignup"
 import { AboutPage } from "./Pages/AboutPage"
 import { MenPage } from "./Pages/MenPage"
 import { WomenPage } from "./Pages/WomenPage"
+import { UserProfile } from "./Pages/UserProfile"
 
 
 export const MainComponent = ()=>{
@@ -21,6 +22,7 @@ export const MainComponent = ()=>{
                 <Route path="about" element={<AboutPage></AboutPage>}/>
                 <Route path="men" element={<MenPage></MenPage>}/>
                 <Route path="women" element={<WomenPage></WomenPage>}/>
+                <Route path="profile" element={<UserProfile></UserProfile>}/>
             </Routes>
             <FooterComponent></FooterComponent>
         </div>
