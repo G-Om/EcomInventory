@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import UserRequests from '../api/UserRequests';
 
 const mockUserData = {
   name: "Aizen Sosuke",
@@ -17,8 +18,22 @@ export const UserProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedUserData, setUpdatedUserData] = useState(null);
 
+  const UserId = localStorage.getItem("userId");
+  console.log(UserId);
+
   useEffect(() => {
-    setUserData(mockUserData);
+    UserRequests.getUserById(UserId).then(
+      (response) => {
+        console.log(response.data);
+        setUserData(response.data);
+      }
+    ).catch (
+    (error) => { 
+      console.log(error)
+      setUserData(mockUserData); 
+    } 
+    );
+  
   }, []);
 
   const handleEditToggle = () => {
@@ -43,7 +58,6 @@ export const UserProfile = () => {
   };
 
   const handleSave = () => {
-    // Here, you would typically send the updated data to the server
     setUserData(updatedUserData);
     setIsEditing(false);
   };
@@ -116,7 +130,7 @@ export const UserProfile = () => {
           </div>
         )}
       </div>
-      <div style={styles.section}>
+      {/* <div style={styles.section}>
         <h2>Order History</h2>
         <table style={styles.table}>
           <thead>
@@ -140,7 +154,7 @@ export const UserProfile = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 };
