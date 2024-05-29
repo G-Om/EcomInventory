@@ -19,6 +19,9 @@ export const NavbarComponent = () => {
             <li>
               <a href="/about">ABOUT</a>
             </li>
+            <li>
+              <a href="/dashboard">DASHBOARD</a>
+            </li>
           </ul>
         </nav>
         <div id="logo">

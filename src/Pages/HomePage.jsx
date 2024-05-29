@@ -1,7 +1,6 @@
 import { CardComponent } from "../Components/CardComponent";
 import { ProductDescriptionComponent } from "../Components/ProductDescriptionComponent";
 
-
 export const HomePage = () => {
   return (
     <div>
@@ -234,7 +233,7 @@ export const HomePage = () => {
         </ul>
       </section>
       <ProductDescriptionComponent></ProductDescriptionComponent>
-
+      
     </div>
   );
 };

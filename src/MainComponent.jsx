@@ -6,7 +6,8 @@ import {LoginSignup} from "./Pages/LoginSignup"
 import { AboutPage } from "./Pages/AboutPage"
 import { MenPage } from "./Pages/MenPage"
 import { WomenPage } from "./Pages/WomenPage"
-
+// import { HomeDashboardPage } from "./Pages/HomeDashboardPage"
+ 
 
 export const MainComponent = ()=>{
 
@@ -21,6 +22,8 @@ export const MainComponent = ()=>{
                 <Route path="about" element={<AboutPage></AboutPage>}/>
                 <Route path="men" element={<MenPage></MenPage>}/>
                 <Route path="women" element={<WomenPage></WomenPage>}/>
+                {/* <Route path="dashboard" element={<HomeDashboardPage></HomeDashboardPage>}/> */}
+                 
             </Routes>
             <FooterComponent></FooterComponent>
         </div>
