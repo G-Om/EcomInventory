@@ -1,65 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { auth } from './Scripts/firebase';  // Adjust the path based on your project structure
+import { GiShoppingCart } from "react-icons/gi";
+
 
 export const NavbarComponent = () => {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();  // Initialize the navigate function
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
-      setUser(user);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  // Function to handle logout
-  const handleLogout = async () => {
-    try {
-      await auth.signOut();
-      navigate('/');  // Use navigate to redirect to the home page
-    } catch (error) {
-      console.error('Logout error:', error.message);
-    }
-  };
-
   return (
     <div>
       <header>
         <nav>
           <ul id="hero">
             <li>
-              <Link to="/">BUY T-SHIRTS</Link>
+              <a href="/">BUY T-SHIRTS</a>
             </li>
             <li>
-              <Link to="/women">WOMEN</Link>
+              <a href="/women">WOMEN</a>
             </li>
             <li>
-              <Link to="/men">MEN</Link>
+              <a href="/men">MEN</a>
             </li>
             <li>
-              <Link to="/about">ABOUT</Link>
+              <a href="/about">ABOUT</a>
             </li>
-            {user && (
-              <li>
-                <Link to="/profile">PROFILE</Link>
-              </li>
-            )}
+            <li>
+              <a href="/profile">PROFILE</a>
+            </li>
           </ul>
         </nav>
         <div id="logo">
-          <Link to="/">  
+          <a href="/">  
             <img src="./images/logo-regular.png" alt="logo" />
-          </Link>
+          </a>
         </div>
         <div id="cart-logo">
-          {user ? (
-            <>
-              <button onClick={handleLogout}>Logout</button>
-            </>
-          ) : (
-            <Link to="/login">Login/Signup</Link>
-          )}
+          <GiShoppingCart size="30px"/>
+          <a href="/login">Login/Signup</a>
         </div>
       </header>
     </div>

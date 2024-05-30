@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore'; 
+import UserRequests from '../api/UserRequests';
+import axios from 'axios';
 
 const mockUserData = {
-  name: "Aizen Sosuke",
-  email: "Aizen@gmail.com",
-  address: "Soul Society",
+  name: "",
+  email: "",
+  mobileNumber: "",
+  gender: "",
+  premiumMember: true,
+  dateOfBirth: "",
+  address: {
+    street: "",
+    city: "",
+    state: "",
+    postalCode: "",
+    country: ""
+  },
   profilePicture: "https://via.placeholder.com/150",
   orderHistory: [
     { orderId: "001", date: "2024-05-01", amount: "$50.00", status: "Delivered", items: ["Product 1", "Product 2"] },
@@ -20,8 +29,21 @@ export const UserProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedUserData, setUpdatedUserData] = useState(null);
 
+  const UserId = localStorage.getItem("userId");
+  console.log(UserId);
+
   useEffect(() => {
-    setUserData(mockUserData);
+    UserRequests.getUserById(UserId).then(
+      (response) => {
+        console.log(response.data);
+        setUserData(response.data);
+      }
+    ).catch (
+    (error) => { 
+      console.log(error)
+      setUserData(mockUserData); 
+    } 
+    );
   }, []);
 
   const handleEditToggle = () => {
@@ -31,7 +53,19 @@ export const UserProfile = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUpdatedUserData({ ...updatedUserData, [name]: value });
+    const [mainKey, subKey] = name.split('.');
+
+    if (subKey) {
+      setUpdatedUserData({ 
+        ...updatedUserData, 
+        [mainKey]: { 
+          ...updatedUserData[mainKey], 
+          [subKey]: value 
+        } 
+      });
+    } else {
+      setUpdatedUserData({ ...updatedUserData, [name]: value });
+    }
   };
 
   const handleFileChange = (e) => {
@@ -46,9 +80,18 @@ export const UserProfile = () => {
   };
 
   const handleSave = () => {
-    // Here, you would typically send the updated data to the server
-    setUserData(updatedUserData);
-    setIsEditing(false);
+    updatedUserData.id = 2;
+    setUpdatedUserData(updatedUserData);
+    alert("Are you sure you want to save this data ?");
+    axios.put('http://localhost:8083/services/api/um/users', updatedUserData)
+    .then(response => {
+      console.log("User data saved:", response.data);
+      setUserData(updatedUserData); 
+      setIsEditing(false); 
+    })
+    .catch(error => {
+      console.error("Error saving user data:", error);
+    });
   };
 
   if (!userData) {
@@ -95,12 +138,114 @@ export const UserProfile = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td><label>Address:</label></td>
+                  <td><label>Mobile Number:</label></td>
                   <td>
                     <input
                       type="text"
-                      name="address"
-                      value={updatedUserData.address}
+                      name="mobileNumber"
+                      value={updatedUserData.mobileNumber}
+                      onChange={handleChange}
+                      style={styles.input}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Gender:</label></td>
+                  <td>
+                    <select
+                      name="gender"
+                      value={updatedUserData.gender}
+                      onChange={handleChange}
+                      style={styles.input}
+                    >
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Premium Member:</label></td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="premiumMember"
+                      checked={updatedUserData.premiumMember}
+                      onChange={(e) => handleChange({ target: { name: 'premiumMember', value: e.target.checked } })}
+                      style={styles.input}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Date of Birth:</label></td>
+                  <td>
+                    <input
+                      type="date"
+                      name="dateOfBirth"
+                      value={updatedUserData.dateOfBirth}
+                      onChange={handleChange}
+                      style={styles.input}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td colSpan="2"><strong>Address</strong></td>
+                </tr>
+                <tr>
+                  <td><label>Street:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="address.street"
+                      value={updatedUserData.address.street}
+                      onChange={handleChange}
+                      style={styles.input}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>City:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="address.city"
+                      value={updatedUserData.address.city}
+                      onChange={handleChange}
+                      style={styles.input}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>State:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="address.state"
+                      value={updatedUserData.address.state}
+                      onChange={handleChange}
+                      style={styles.input}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Postal Code:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="address.postalCode"
+                      value={updatedUserData.address.postalCode}
+                      onChange={handleChange}
+                      style={styles.input}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Country:</label></td>
+                  <td>
+                    <input
+                      type="text"
+                      name="address.country"
+                      value={updatedUserData.address.country}
                       onChange={handleChange}
                       style={styles.input}
                     />
@@ -114,12 +259,17 @@ export const UserProfile = () => {
           <div>
             <p><strong>Name:</strong> {userData.name}</p>
             <p><strong>Email:</strong> {userData.email}</p>
-            <p><strong>Address:</strong> {userData.address}</p>
+            <p><strong>Mobile Number:</strong> {userData.mobileNumber}</p>
+            <p><strong>Gender:</strong> {userData.gender}</p>
+            <p><strong>Premium Member:</strong> {userData.premiumMember ? 'Yes' : 'No'}</p>
+            <p><strong>Date of Birth:</strong> {userData.dateOfBirth}</p>
+            <p><strong>Address:</strong></p>
+            <p>{userData.address.street}, {userData.address.city}, {userData.address.state}, {userData.address.postalCode}, {userData.address.country}</p>
             <button onClick={handleEditToggle} style={styles.button}>Edit</button>
           </div>
         )}
       </div>
-      <div style={styles.section}>
+      {/* <div style={styles.section}>
         <h2>Order History</h2>
         <table style={styles.table}>
           <thead>
@@ -143,7 +293,7 @@ export const UserProfile = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,13 +1,16 @@
-import axios from 'axios';
-import axiosInstance from './axiosInstance';
+import axiosInstance  from './axiosInstance';
 
 
-export const UserRequests =()=> {
+class UserRequests  {
 
-    function registerUser(data){
+    registerUser(data){
 
         return axiosInstance.post('/um/users', data);
     }
+
+    getUserById(userId) {
+        return axiosInstance.get("um/users/" + userId);
+    }
 }
 
-
+export default new UserRequests();
