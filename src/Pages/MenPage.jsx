@@ -17,6 +17,7 @@ export const MenPage = ()=>{
             <h1>Men</h1>
             <p>Showing all 5 results</p>
           </div>
+
             <ul className="products column-4">
               <li className="product-card">
                 <CardComponent

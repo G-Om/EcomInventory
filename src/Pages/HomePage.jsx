@@ -1,7 +1,38 @@
 import { CardComponent } from "../Components/CardComponent";
 import { ProductDescriptionComponent } from "../Components/ProductDescriptionComponent";
-
+import { Link } from 'react-router-dom';
 export const HomePage = () => {
+  const cards = [
+    {
+      id: 1,
+      price: "15",
+      name: "T-Shirt Name 1",
+      category: "Men",
+      image: "./images/card1.jpg",
+    },
+    {
+      id: 2,
+      price: "25",
+      name: "T-Shirt Name 2",
+      category: "Women",
+      image: "./images/card1.jpg",
+    },
+    {
+      id: 3,
+      price: "45",
+      name: "T-Shirt Name 3",
+      category: "Men",
+      image: "./images/card1.jpg",
+    },
+    {
+      id: 4,
+      price: "34",
+      name: "T-Shirt Name 4",
+      category: "Men",
+      image: "./images/card1.jpg",
+    },
+    // Add more card objects as needed
+  ];
   return (
     <div>
       <section class="carousel" id="home">
@@ -38,7 +69,25 @@ export const HomePage = () => {
             </div>
             {/* Card Tray */}
             <ul className="products column-4">
-              <li className="product-card">
+              {cards.map((card, index) => {
+                console.log("Loop Called "+ index)
+                return (
+                <li key={index} className="product-card">
+                  <Link to={`/card/${card.id}`}>
+                    <CardComponent
+                     price={card.price}
+                     name={card.name}
+                     category={card.category}
+                     image={card.image}
+                    />  
+                  </Link>
+                </li>
+                 )
+                }
+              
+              )}
+
+              {/* <li className="product-card">
                 <CardComponent
                   price={"15"}
                   name={"T-Shirt Name 1"}
@@ -69,7 +118,7 @@ export const HomePage = () => {
                   category={"Women"}
                   image={"./images/card4.jpg"}
                 ></CardComponent>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -106,7 +155,6 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-
 
       {/* Elementor */}
       <section class="elementor">
@@ -219,21 +267,20 @@ export const HomePage = () => {
       <section>
         <ul id="products">
           <li>
-              <img src="./images/men.jpg" alt="men" />
-              <a href="">
-                <div className="product-button">MEN</div>
-              </a>
+            <img src="./images/men.jpg" alt="men" />
+            <a href="">
+              <div className="product-button">MEN</div>
+            </a>
           </li>
           <li>
-              <img src="./images/women.jpg" alt="women" />
-              <a href="">
-                <div className="product-button">WOMEN</div>
-              </a>
+            <img src="./images/women.jpg" alt="women" />
+            <a href="">
+              <div className="product-button">WOMEN</div>
+            </a>
           </li>
         </ul>
       </section>
       <ProductDescriptionComponent></ProductDescriptionComponent>
-      
     </div>
   );
 };

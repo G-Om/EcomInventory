@@ -1,8 +1,24 @@
 import React, { useState } from "react";
-export const ProductDescriptionComponent = () => {
-  //  Define a state variable for the quantity
-  const [quantity, setQuantity] = useState(1);
+import { useParams } from 'react-router-dom'
 
+
+export const ProductDescriptionComponent = (data) => {
+  //  Define a state variable for the quantity and color selector
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const { id } = useParams();
+  console.log("Product id " + id)
+  const handleColorSelection = (color) => {
+    setSelectedColor(color);
+  };
+
+  const handleAddToCart = () => {
+    console.log({
+      id: id,
+      color: selectedColor,
+      quantity: quantity
+    });
+  };
   // Create functions to handle increment and decrement
   const handleIncrement = () => {
     setQuantity(quantity + 1);
@@ -23,6 +39,19 @@ export const ProductDescriptionComponent = () => {
   const handleTogglerev = () => {
     setShowDivrev(!showDivrev); // Toggle the state (showDiv) on button click
   };
+ 
+  
+
+
+  const productData =  {
+    "id": id,
+    "name": "Tshirt",
+    "price": 1200,
+    "quantity": 107,
+    "description": "product description",
+    "image": null,
+    "category" : "Men",
+  }
 
   return (
     <div>
@@ -30,13 +59,13 @@ export const ProductDescriptionComponent = () => {
         <div className="product-description-component">
           <div className="left-product-description">
             <div className="product-desc-gallary-main-image">
-              <img src={"./images/product-desc.jpg"} alt="product main"></img>
+              <img src={"./public/images/product-desc.jpg"} alt="product main"></img>
             </div>
             <div className="product-image-color-option">
-              <img src={"./images/black tshirt.jpg"} alt="product black "></img>
-              <img src={"./images/white tshirt.jpg"} alt="product white"></img>
+              <img src={"./public/images/black tshirt.jpg"} alt="product black "></img>
+              <img src={"./public/images/white tshirt.jpg"} alt="product white"></img>
               <img
-                src={"./images/orange tshirt.jpg"}
+                src={"./public/images/orange tshirt.jpg"}
                 alt="product orange"
               ></img>
             </div>
@@ -45,40 +74,37 @@ export const ProductDescriptionComponent = () => {
           <div className="right-product-description">
             <span class="single-product-category">
               <a href="#" rel="tag">
-                Men
+                {productData.category}
               </a>
             </span>
-            <h1 class="product_title entry-title">T-Shirt Name 10</h1>
+            <h1 class="product_title entry-title">{productData.name}</h1>
             <p class="price">
               <span class="woocommerce-Price-amount amount">
                 {/* BiDirectional isolation */}
                 <bdi>
                   {" "}
-                  <span class="woocommerce-Price-currencySymbol">$33.00</span>
+                  <span class="woocommerce-Price-currencySymbol">{productData.price}</span>
                 </bdi>
               </span>
               –
               <span class="woocommerce-Price-amount amount">
                 <bdi>
-                  <span class="woocommerce-Price-currencySymbol">$36.00</span>
+                  <span class="woocommerce-Price-currencySymbol">{productData.price}</span>
                 </bdi>
               </span>
               <span class="ast-shipping-text">&amp; Free Shipping</span>
             </p>
             <div className="particular-product-desc">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-                dapibus interdum eros. In blandit velit a lacus laoreet dictum.
-                Maecenas vel vulputate nulla. Ut nec enim vel tortor aliquet
-                varius.
+                {productData.description}
               </p>
             </div>
             <div className="color">
               <p>Color</p>
               <div className="color-option">
-                <button className="color-black">Black</button>
-                <button className="color-orange">Orange</button>
-                <button className="color-white">White</button>
+                <button className="color-black" onClick={() => handleColorSelection('black')}>Black</button>
+                <button className="color-orange" onClick={() => handleColorSelection('orange')}>Orange</button>
+                <button className="color-white" onClick={() => handleColorSelection('white')}>White</button>
               </div>
             </div>
             <div className="quantity">
@@ -90,12 +116,12 @@ export const ProductDescriptionComponent = () => {
               <span class="posted_in">
                 Category:{" "}
                 <a href="#" rel="tag">
-                  Men
+                  {productData.category}
                 </a>
               </span>
             </div>
             <div className="product-addition-cart">
-              <button type="submit" className="add-to-cart">
+              <button type="submit" className="add-to-cart" onClick={handleAddToCart}>
                 Add To Cart
               </button>
             </div>
@@ -196,3 +222,4 @@ export const ProductDescriptionComponent = () => {
     </div>
   );
 };
+ 
