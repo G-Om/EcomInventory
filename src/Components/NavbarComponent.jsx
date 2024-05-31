@@ -27,6 +27,9 @@ export const NavbarComponent = () => {
               <a href="/about">ABOUT</a>
             </li>
             <li>
+              <a href="/profile">PROFILE</a>
+            </li>
+            <li>
               <a href="/dashboard">DASHBOARD</a>
             </li>
           </ul>

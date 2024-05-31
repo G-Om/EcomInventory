@@ -6,6 +6,7 @@ import {LoginSignup} from "./Pages/LoginSignup"
 import { AboutPage } from "./Pages/AboutPage"
 import { MenPage } from "./Pages/MenPage"
 import { WomenPage } from "./Pages/WomenPage"
+import { UserProfile } from "./Pages/UserProfile"
 // import { HomeDashboardPage } from "./Pages/HomeDashboardPage"
 import { ProductDescriptionComponent } from "./Components/ProductDescriptionComponent"
 import { Cart } from "./Components/Cart"
@@ -24,6 +25,7 @@ export const MainComponent = ()=>{
                 <Route path="about" element={<AboutPage></AboutPage>}/>
                 <Route path="men" element={<MenPage></MenPage>}/>
                 <Route path="women" element={<WomenPage></WomenPage>}/>
+                <Route path="profile" element={<UserProfile></UserProfile>}/>
                 {/* <Route path="dashboard" element={<HomeDashboardPage></HomeDashboardPage>}/> */}
                 <Route path="/card/:id" element={<ProductDescriptionComponent></ProductDescriptionComponent>} />
                 <Route path="/cart" element={<Cart></Cart>} />
