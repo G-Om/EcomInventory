@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { useParams } from 'react-router-dom'
+import card1 from '../images/card1.jpg'
+import  blackTshirt from '../images/black tshirt.jpg'
+import  orangeTshirt from '../images/orange tshirt.jpg'
+import whiteTshirt from '../images/white tshirt.jpg'
+
 
 
 export const ProductDescriptionComponent = (data) => {
@@ -59,13 +64,13 @@ export const ProductDescriptionComponent = (data) => {
         <div className="product-description-component">
           <div className="left-product-description">
             <div className="product-desc-gallary-main-image">
-              <img src={"./public/images/product-desc.jpg"} alt="product main"></img>
+              <img src={card1} alt="product main"></img>
             </div>
             <div className="product-image-color-option">
-              <img src={"./public/images/black tshirt.jpg"} alt="product black "></img>
-              <img src={"./public/images/white tshirt.jpg"} alt="product white"></img>
+              <img src={blackTshirt} alt="product black "></img>
+              <img src={whiteTshirt} alt="product white"></img>
               <img
-                src={"./public/images/orange tshirt.jpg"}
+                src={orangeTshirt}
                 alt="product orange"
               ></img>
             </div>

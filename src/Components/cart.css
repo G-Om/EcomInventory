@@ -41,3 +41,125 @@
   margin: 10px;
   cursor: pointer;
 }
+
+/* new css */
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cart Item container */
+.cartItem {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.cartItem:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image styling */
+.cartItem img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+/* Description container */
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Product name styling */
+.description p {
+  margin: 5px 0;
+}
+
+.description p b {
+  font-size: 1.2em;
+  color: #333333;
+}
+
+/* Price styling */
+.description p:last-child {
+  color: #666666;
+  font-size: 1em;
+}
+
+/* Count handler container */
+.countHandler {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.countHandler button {
+  background-color: #007bff;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.countHandler button:hover {
+  background-color: #0056b3;
+}
+
+.countHandler p {
+  margin: 0 10px;
+  font-size: 1em;
+}
+
+/* Remove button styling */
+.countHandler button:last-child {
+  background-color: #dc3545;
+}
+
+.countHandler button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cartItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cartItem img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .countHandler {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .countHandler button {
+    margin-bottom: 5px;
+  }
+
+  .countHandler p {
+    margin: 5px 0;
+  }
+}

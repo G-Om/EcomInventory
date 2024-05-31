@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { useHistory, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginSignup = () => {
   const [showSignup, setShowSignup] = useState(true);
   const redirect = useNavigate();
   const userLoggedIn = false;
+
+  const hardcodedEmail = "mayurpanchal@gmail.com";
+  const hardcodedPassword = "mayur123";
+  
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
   const toggleForm = () => {
     setShowSignup(!showSignup);
@@ -15,10 +21,15 @@ export const LoginSignup = () => {
   };
 
   const handleLoginSubmit = (event) => {
-    if(userLoggedIn == true) {
-      localStorage.setItem("userId", 2)
+    localStorage.setItem("email", hardcodedEmail);
+    localStorage.setItem("password", hardcodedPassword);
+    event.preventDefault();
+    if (loginEmail === hardcodedEmail && loginPassword === hardcodedPassword) {
+      localStorage.setItem("userId", 2);
+      redirect("/");
+    } else {
+      alert("Invalid email or password");
     }
-    redirect("/");
   };
 
   return (
@@ -46,17 +57,29 @@ export const LoginSignup = () => {
               <input type="email" placeholder="Your Email" name="email" />
               <input type="password" placeholder="Set a password" name="password" autoComplete="false" />
               <input type="submit" value="Sign Up" />
-              <a href="#">Already Have An Account</a>
+              <a href="#" onClick={toggleForm}>Already Have An Account</a>
             </form>
           </div>
         ) : (
           <div className="login-form">
             <form onSubmit={handleLoginSubmit}>
               <label className="login-header">Login</label>
-              <input type="email" placeholder="Your Email" name="email" />
-              <input type="password" placeholder="Set a password" name="password" />
+              <input 
+                type="email" 
+                placeholder="Your Email" 
+                name="email"
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
+              />
+              <input 
+                type="password" 
+                placeholder="Set a password" 
+                name="password"
+                value={loginPassword}
+                onChange={(e) => setLoginPassword(e.target.value)}
+              />
               <input type="submit" value="Login" />
-              <a href="#">Create New Account</a>
+              <a href="#" onClick={toggleForm}>Create New Account</a>
             </form>
           </div>
         )}

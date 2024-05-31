@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { CartItem } from "./CartItem";
 import "./cart.css";
 import { useNavigate } from 'react-router-dom';
+import card1 from "../images/card1.jpg"
+import card2 from "../images/card2.jpg"
+
 
 export const Cart = () => {
   const navigate = useNavigate();
@@ -11,13 +14,13 @@ export const Cart = () => {
     "id" : 11,
     "productName"  : "Tshirt-1",
     "price" : "100",
-    "productImage" : "null",
+    "productImage" : "../images/card1.jpg",
   },
   {
     "id" : 12,
     "productName"  : "Tshirt-2",
     "price" : "169",
-    "productImage" : "null",
+    "productImage" : "../images/card2.jpg",
   }
 ];
 
