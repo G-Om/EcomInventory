@@ -1,7 +1,14 @@
 import { GiShoppingCart } from "react-icons/gi";
-
+import { useNavigate } from 'react-router-dom';
 
 export const NavbarComponent = () => {
+
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate('/cart');  // Replace '/cart' with the actual route to your cart component
+  };
+
   return (
     <div>
       <header>
@@ -22,6 +29,9 @@ export const NavbarComponent = () => {
             <li>
               <a href="/profile">PROFILE</a>
             </li>
+            <li>
+              <a href="/dashboard">DASHBOARD</a>
+            </li>
           </ul>
         </nav>
         <div id="logo">
@@ -30,7 +40,9 @@ export const NavbarComponent = () => {
           </a>
         </div>
         <div id="cart-logo">
+        <div onClick={handleCartClick}>
           <GiShoppingCart size="30px"/>
+          </div>
           <a href="/login">Login/Signup</a>
         </div>
       </header>
